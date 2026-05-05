@@ -1,7 +1,13 @@
 [package]
-name = "lfdt_lcc"
+name = "lfdt-lcc"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-generic-ec = "0.5.0"
+generic-ec = "0.5"
+rand_core = { version = "0.6", features = ["getrandom"] }
+sha2 = "0.10"
+
+[dev-dependencies]
+generic-ec = { version = "0.5", features = ["all-curves"] }
+hex = "0.4.3"
