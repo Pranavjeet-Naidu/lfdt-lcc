@@ -154,7 +154,7 @@ mod tests {
         let sk = Scalar::<Secp256k1>::random(&mut rng);
         let pk = Point::<Secp256k1>::generator() * &sk;
 
-        let original_message = b"Systems research is cool, but cryptography is fun too.";
+        let original_message = b"cryptography is kinda really cool";
 
         let ciphertext = encrypt::<Secp256k1>(&pk, original_message, &mut rng).expect("Encryption failed");
         let decrypted = decrypt::<Secp256k1>(&sk, &ciphertext).expect("Decryption failed");
