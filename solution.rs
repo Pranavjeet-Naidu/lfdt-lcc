@@ -10,6 +10,8 @@ sha2 = "0.10"
 hex = "0.4.3"
 ---
 // while the rfc doc in the pdf uses a different syntax, the updated docs at: https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#script use a frontmatter syntax for the cargo.toml
+// command to run is present in the comment below
+// cargo +nightly -Zscript test --manifest-path solution.rs
 use generic_ec::{Curve, Point, Scalar, SecretScalar};
 use rand_core::{CryptoRng, RngCore};
 use sha2::{Digest, Sha256};
