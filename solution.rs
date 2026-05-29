@@ -38,8 +38,10 @@ pub fn encrypt<E: Curve>(
     let k_iter = k_hash.iter().cycle();
 
     let mut res = r.to_bytes(true).as_ref().to_vec();
-    res.extend(m.iter().zip(k_iter).map(|(&mi, &ki)| mi ^ ki));
-    
+    for(m_val, k_val) in m.iter().zip(k_iter)
+        { // this is simpler, easier to understand, for now ill stay away from closures
+	        res.push(*m_val ^ *k_val);
+        }    
     Ok(res)
 }
 
